@@ -1,4 +1,4 @@
-import {Controller, Delete, Get, Headers, HttpCode, Post, Put} from '@nestjs/common';
+import {Body, Controller, Delete, Get, Headers, HttpCode, Param, Post, Put, Query, Request, Response} from '@nestjs/common';
 import { AppService } from './app.service';
 
 
@@ -33,6 +33,65 @@ export class AppController {
           return ' :( ';
       }
     }
+
+    // ---------------------------------------------------
+
+    //?llave=valor&llave2=valor2
+    // PARAMETROS DE CONSULTA -> QUERY PARAMS
+    @Get('/consultar')
+    consultar(@Query() queryParams) {
+      console.log(queryParams);
+      if(queryParams.nombre) {
+          return `Hola ${queryParams.nombre}`
+      } else {
+          return 'Hola extraño'
+      }
+    }
+
+    //PARAMETROS DE RUTA -> ROUTE PARAMS
+    @Get('/ciudad/:idCiudad')
+    ciudad(@Param() routeParams) {
+      switch (routeParams.idCiudad.toLowerCase()) {
+          case 'quito':
+              return 'Que fueff';
+          case 'guayaquil':
+              return 'Que mash ñañosh';
+          default:
+              return 'Buenas tardes';
+      }
+    }
+
+    //PARAMETROS DE CUERPO -> BODY PARAMS
+    @Post('registroComida')
+    registroComida(
+        @Body() bodyParams,
+        @Response() response
+    ) {
+      if(bodyParams.nombre && bodyParams.cantidad) {
+          const cantidad = Number(bodyParams.cantidad);
+          if(bodyParams.cantidad > 1) {
+              response.set('Premio','Guatita');
+          }
+          return response.send({mensaje:'Registro'});
+      } else {
+          return response.status(400).send({
+              mensaje:'ERROR, no envia nombre o cantidad',
+              error:400});
+      }
+    }
+
+    @Get('/semilla')
+    semilla(@Request() request) {
+      console.log(request.cookies);
+      const cookies = request.cookies;
+      if(cookies.micookie) {
+          return 'ok'
+      } else {
+          return ':(';
+      }
+    }
+
+    // ---------------------------------------------------
 
     /*
     Segmento inicial -> /api
