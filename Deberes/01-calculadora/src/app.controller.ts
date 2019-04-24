@@ -14,22 +14,23 @@ export class AppController {
 
   @Get('/sumarDosNumeros')
   @HttpCode(200)
-  sumaDosNumeros(@Headers() cabeceras,
+  sumaDosNumeros(@Headers() headers,
                  @Response() response,
                  @Request() request) {
-    if (cabeceras.numeroUno && cabeceras.numeroDos) {
+    if (headers.numerouno && headers.numerodos) {
       const cookie = request.cookies;
-      const numero1 = Number(cabeceras.numeroUno);
-      const numero2 = Number(cabeceras.numeroDos);
+      const numero1 = Number(headers.numerouno);
+      const numero2 = Number(headers.numerodos);
       const totalSuma = numero1 + numero2;
       response.cookie('nombreUsuario', 'Kevin');
       return response.send({resultado: totalSuma.toString(),
         nombreUsuario: cookie.nombreUsuario});
     } else {
-      return response.status(400).send({
-        mensajeError: 'ERROR... no existen numeros para SUMAR',
-        error: 400,
-      });
+
+     return response.status(400).send({
+       mensajeError: 'ERROR... no existen numeros para SUMAR',
+       error: 400,
+     });
     }
   }
 

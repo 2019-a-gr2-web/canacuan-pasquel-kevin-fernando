@@ -168,6 +168,18 @@ export class AppController {
   halloWelt(): string {
     return 'Hallo Welt'
   }
+
+
+  // Vistas
+
+    @Get('/inicio')
+    inicio(
+        @Response() res
+    ) {
+      return res.render('inicio');
+    }
+
+
   
 }
 
@@ -232,3 +244,160 @@ objeto['propiedadTres'] = 'valor 3';
 delete objeto.propiedadTres;        // -> forma peligros
 objeto.propiedadTres = undefined;    // -> forma segura
 
+
+
+function holaMundo() {
+    console.log('Hola Mundo');
+}
+const respuestaHolaMundo = holaMundo();     // retorna undefined
+console.log('Resp hola mundo: ',respuestaHolaMundo)
+
+function suma(a:number, b:number):number {
+    return a + b;
+}
+const respuestaSuma = suma(1,2);
+console.log('Resp suma:', respuestaSuma);
+
+
+// Condicionales
+if(true) {          // Truty
+    console.log('Verdadeero');
+} else {
+    console.log('Falso');
+}
+
+if(false) {         // Falsy
+    console.log('Verdadeero');
+} else {
+    console.log('Falso');
+}
+
+if("") {            // Un string vacio en JS es Falsy
+    console.log('Verdadero "" ');
+} else {
+    console.log('Falso "" ');
+}
+
+if("b") {            // Un string con un caracter o mas en JS es Truty
+    console.log('Verdadero "" ');
+} else {
+    console.log('Falso "" ');
+}
+
+if(0) {            // El 0 en JS es Falsy
+    console.log('Verdadero "" ');
+} else {
+    console.log('Falso "" ');
+}
+
+if("0") {            // El 0 string en JS es Truty
+    console.log('Verdadero "0" ');
+} else {
+    console.log('Falso "0" ');
+}
+
+if(-1) {            // El -1 en JS es Truty
+    console.log('Verdadero "-1" ');
+} else {
+    console.log('Falso "-1" ');
+}
+
+if(1) {            // El 1 en JS es Truty
+    console.log('Verdadero "1" ');
+} else {
+    console.log('Falso "1" ');
+}
+
+if(undefined) {            // El undifined en JS es Falsy
+    console.log('Verdadero "U" ');
+} else {
+    console.log('Falso "U" ');
+}
+
+if(null) {            // El null en JS es Falsy
+    console.log('Verdadero "N" ');
+} else {
+    console.log('Falso "N" ');
+}
+
+if({}) {            // El JSON vacio en JS es Truty
+    console.log('Verdadero "JSON" ');
+} else {
+    console.log('Falso "JSON" ');
+}
+
+
+// Operadores de Arreglos en JS
+const arreglo = [
+    function () { return '0'},
+    1,
+    'B',
+    true,
+    {},
+    []
+];
+
+const arregloNumeros = [1,2,3,4,5,6];
+
+// 1) Imprima en consola todos los elementos
+const arregloNumerosForEach = [1,2,3,4,5,6];
+const respuestaForEach = arregloNumerosForEach
+    .forEach(
+        function (valorActual,
+                  indice,
+                  arreglo) {
+            //console.log(`Valor: ${valorActual}`);
+            //console.log(`Indice: ${indice}`);
+            console.log(`Arreglo: ${arreglo}`);
+        }
+    );
+
+const respuestaForEach2 = arregloNumerosForEach
+    .forEach((arreglo) => console.log(`Arreglo: ${arreglo}`));
+
+console.log(`Respuesta ForEach: ${respuestaForEach2}`);
+
+// 2) Sume 2 a los pares y 1 a los impares
+const arregloNumerosMap = [1,2,3,4,5,6];
+const respuestaMap = arregloNumerosMap
+    .map(               // Devolver el nuevo valor de ese elemento
+        (valorActual) => {
+            const esPar  = valorActual%2 == 0;
+            if(esPar) {
+                return valorActual + 2;
+            } else {
+                return valorActual + 1;
+            }
+        }
+    );
+console.log(`Respuesta Map: ${respuestaMap}`);
+
+// 3) Encontrar si existe el numero 4
+const arregloNumerosFind = [1,2,3,4,5,6];
+const respuestaFind = arregloNumerosFind
+    .find(
+        (valorActual) => {
+            return valorActual == 4;
+        }
+    );
+console.log(`Respuesta Find: ${respuestaFind}`);
+
+// 4) Filtrar los numeros menos a 5
+const arregloNumerosFilter = [1,2,3,4,5,6];
+const respuestaFilter = arregloNumerosFilter
+    .filter(
+        (valorActual) => {
+            return valorActual < 5;
+        }
+    )
+console.log(`Respuesta Filter: ${respuestaFilter}`);
+
+// 5) Todos los valores son positivos
+// 6) Algun valor es menor que 2 ?
+// 7) Sumar todos los valores
+// 8) Restar todos los valores de 100
+
+
+// 1.1) Sumar 10 a todos
+// 1.2) Filtrar a los mayores a 15
+// 1.3) Si exite algun numero mayor a 30
