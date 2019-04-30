@@ -2,4 +2,15 @@
 <% const nombre = 'Kevin';  //codigo JS%>
 <%= nombre %>
 <% const arreglo = [1,2,3,4,5]; %>
-<% %>
+<%= arreglo%>
+<% const objeto = {nombre:'Kevin'}; %>
+<%= objeto%>
+
+<% arreglo.forEach((valorActual) => { %>
+<p> Numero: <%= valorActual%> </p>
+<% }) %>
+<ol>
+    <% arreglo.forEach((valorActual) => { %>
+    <li>Numero: <%= valorActual%> </li>
+        <% }) %>
+</ol>
