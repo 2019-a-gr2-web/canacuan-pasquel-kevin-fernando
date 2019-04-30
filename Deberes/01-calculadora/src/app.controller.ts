@@ -21,29 +21,36 @@ export class AppController {
       const cookies = request.cookies;
       const cookieSig = request.signedCookies;
       if (!cookieSig.puntos) {
-        response.cookie('puntos', 100, { signed: true });
+        response.cookie('puntos', '100', { signed: true });
+        console.log('COOKIE', cookieSig.puntos);
       }
-      const n1 = Number(headers.numero1);
-      const n2 = Number(headers.numero2);
+      
+      const n1 = Number(headers.numerouno);
+      const n2 = Number(headers.numerodos);
       if (!cookies.usuario) {
         response.cookie('usuario', 'Kevin');
       }
       const suma = n1 + n2;
+      console.log('suma', suma)
       const tIntentos = cookieSig.puntos - suma;
+      console.log('intentos', tIntentos)
+      cookieSig.puntos = tIntentos;
+
+      if (cookieSig.puntos) {
+        response.cookie('puntos', tIntentos, { signed: true });
+      }
 
       if (tIntentos <= 0) {
         const res = {
           resultado: `Resultado de la suma es: ${suma}`,
           usuario: `Usuario: ${cookies.usuario}`,
           mensaje: `Se acabaron los puntos`};
-        response.cookie('puntos', tIntentos, { signed: true });
         response.send(res);
       } else {
         const res = {
           resultado: `Resultado de la suma es: ${suma}`,
           usuario: `Usuario: ${cookies.usuario}`,
           mensaje: `Tiene ${tIntentos} puntos disponibles `};
-        response.cookie('puntos', tIntentos, { signed: true });
         return response.send(res);
       }
     } else {

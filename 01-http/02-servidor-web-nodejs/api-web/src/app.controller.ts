@@ -7,33 +7,33 @@ import * as Joi from '@hapi/joi'
 
 @Controller('/api')
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+    constructor(private readonly appService: AppService) {}
 
-  @Post()   //metodo http
-  @HttpCode(200)
-  postHello() {
-    return 'Hola mundo en post';
-  }
+    @Post()   //metodo http
+    @HttpCode(200)
+    postHello() {
+        return 'Hola mundo en post';
+    }
 
-  //@Get('/hello-world')    //metodo hhtp
-  //getHello(): string {
-  //  return this.appService.getHello();
-  //}
+    //@Get('/hello-world')    //metodo hhtp
+    //getHello(): string {
+    //  return this.appService.getHello();
+    //}
 
-  // ----------------------
+    // ----------------------
 
     @Get('/adivina')
     adivina(@Headers() headers): string {
 
-      console.log('Headers', headers);
-      const numeroRandomico = Math.round(Math.random()*10);
-      const numeroDeCabecera = Number(headers.numero);
+        console.log('Headers', headers);
+        const numeroRandomico = Math.round(Math.random()*10);
+        const numeroDeCabecera = Number(headers.numero);
 
-      if (numeroDeCabecera == numeroRandomico) {
-          return 'Ok';
-      } else {
-          return ' :( ';
-      }
+        if (numeroDeCabecera == numeroRandomico) {
+            return 'Ok';
+        } else {
+            return ' :( ';
+        }
     }
 
     // ---------------------------------------------------
@@ -42,25 +42,25 @@ export class AppController {
     // PARAMETROS DE CONSULTA -> QUERY PARAMS
     @Get('/consultar')
     consultar(@Query() queryParams) {
-      console.log(queryParams);
-      if(queryParams.nombre) {
-          return `Hola ${queryParams.nombre}`
-      } else {
-          return 'Hola extraño'
-      }
+        console.log(queryParams);
+        if(queryParams.nombre) {
+            return `Hola ${queryParams.nombre}`
+        } else {
+            return 'Hola extraño'
+        }
     }
 
     //PARAMETROS DE RUTA -> ROUTE PARAMS
     @Get('/ciudad/:idCiudad')
     ciudad(@Param() routeParams) {
-      switch (routeParams.idCiudad.toLowerCase()) {
-          case 'quito':
-              return 'Que fueff';
-          case 'guayaquil':
-              return 'Que mash ñañosh';
-          default:
-              return 'Buenas tardes';
-      }
+        switch (routeParams.idCiudad.toLowerCase()) {
+            case 'quito':
+                return 'Que fueff';
+            case 'guayaquil':
+                return 'Que mash ñañosh';
+            default:
+                return 'Buenas tardes';
+        }
     }
 
     //PARAMETROS DE CUERPO -> BODY PARAMS
@@ -69,17 +69,17 @@ export class AppController {
         @Body() bodyParams,
         @Response() response
     ) {
-      if(bodyParams.nombre && bodyParams.cantidad) {
-          const cantidad = Number(bodyParams.cantidad);
-          if(bodyParams.cantidad > 1) {
-              response.set('Premio','Guatita');
-          }
-          return response.send({mensaje:'Registro'});
-      } else {
-          return response.status(400).send({
-              mensaje:'ERROR, no envia nombre o cantidad',
-              error:400});
-      }
+        if(bodyParams.nombre && bodyParams.cantidad) {
+            const cantidad = Number(bodyParams.cantidad);
+            if(bodyParams.cantidad > 1) {
+                response.set('Premio','Guatita');
+            }
+            return response.send({mensaje:'Registro'});
+        } else {
+            return response.status(400).send({
+                mensaje:'ERROR, no envia nombre o cantidad',
+                error:400});
+        }
     }
 
     @Get('/semilla')
@@ -87,27 +87,27 @@ export class AppController {
         @Request() request,
         @Response() response
     ) {
-      console.log(request.cookies);
-      const cookies = request.cookies;  //JSON
+        console.log(request.cookies);
+        const cookies = request.cookies;  //JSON
 
         //---------------------------
 
-      const esquemaValidacionNumero = Joi.object().keys(
-          {
-            numero:Joi.number().integer().required()
-          });
-      const objetoValidacion = {
-          numero: cookies.numero
-      };
-      const resultado = Joi.validate(objetoValidacion,
-          esquemaValidacionNumero);
-      if(resultado.error) {
-          console.log('Resultado', resultado);
-      } else {
-          console.log('Numero valido');
-      }
+        const esquemaValidacionNumero = Joi.object().keys(
+            {
+                numero:Joi.number().integer().required()
+            });
+        const objetoValidacion = {
+            numero: cookies.numero
+        };
+        const resultado = Joi.validate(objetoValidacion,
+            esquemaValidacionNumero);
+        if(resultado.error) {
+            console.log('Resultado', resultado);
+        } else {
+            console.log('Numero valido');
+        }
 
-      /*- ------------------------------------ */
+        /*- ------------------------------------ */
 
         const cookieSegura = request.signedCookies.fechaServidor;
         if(cookieSegura) {
@@ -117,25 +117,25 @@ export class AppController {
         }
 
 
-      if(cookies.micookie) {
+        if(cookies.micookie) {
 
-          const horaFechaServidor = new Date();
-          const minutos = horaFechaServidor.getMinutes();
-          horaFechaServidor.setMinutes(minutos + 1);
+            const horaFechaServidor = new Date();
+            const minutos = horaFechaServidor.getMinutes();
+            horaFechaServidor.setMinutes(minutos + 1);
 
-          response.cookie(
-              'fechaServidor',          // nombre -> key
-              new Date().getTime(),     // valor -> value
-              {    // OPCIONES
-                  // expires: horaFechaServidor
-                  signed: true
-              }
+            response.cookie(
+                'fechaServidor',          // nombre -> key
+                new Date().getTime(),     // valor -> value
+                {    // OPCIONES
+                    // expires: horaFechaServidor
+                    signed: true
+                }
 
-          );
-          return response.send('ok');
-      } else {
-          return response.send(':(');
-      }
+            );
+            return response.send('ok');
+        } else {
+            return response.send(':(');
+        }
     }
 
     // ---------------------------------------------------
@@ -149,38 +149,38 @@ export class AppController {
       4) Segmento accion: '' -> DELETE
      */
 
-  @Get('/hello-world')
-  helloWorld(): string {
-    return 'Hello World'
-  }
+    @Get('/hello-world')
+    helloWorld(): string {
+        return 'Hello World'
+    }
 
-  @Post('/hola-mundo')
-  holaMundo() {
-    return 'Hola Mundo'
-  }
+    @Post('/hola-mundo')
+    holaMundo() {
+        return 'Hola Mundo'
+    }
 
-  @Put('/salut-monde')
-  salutMonde() {
-    return 'Salut Monde'
-  }
+    @Put('/salut-monde')
+    salutMonde() {
+        return 'Salut Monde'
+    }
 
-  @Delete('/hallo-welt')
-  halloWelt(): string {
-    return 'Hallo Welt'
-  }
+    @Delete('/hallo-welt')
+    halloWelt(): string {
+        return 'Hallo Welt'
+    }
 
 
-  // Vistas
+    // Vistas
 
     @Get('/inicio')
     inicio(
         @Response() res
     ) {
-      return res.render('inicio');
+        return res.render('inicio');
     }
 
 
-  
+
 }
 
 
@@ -208,24 +208,24 @@ class usuario {
 
 const json = [
     {
-    "llave":"valor",
-    "key":"value",
-    "nombre":"Kevin",
-    "edad":24,
-    sueldo:10.50,
-    "casado":false,
-    "hijos":null,
-    mascotas:[
-        "cachetes",
-        1,
-        1.10,
-        false,
-        null,
-        {
-            "nombre":"JACK"
-        }
-    ]
-}
+        "llave":"valor",
+        "key":"value",
+        "nombre":"Kevin",
+        "edad":24,
+        sueldo:10.50,
+        "casado":false,
+        "hijos":null,
+        mascotas:[
+            "cachetes",
+            1,
+            1.10,
+            false,
+            null,
+            {
+                "nombre":"JACK"
+            }
+        ]
+    }
 ];
 
 let objeto:any = {
@@ -389,15 +389,74 @@ const respuestaFilter = arregloNumerosFilter
         (valorActual) => {
             return valorActual < 5;
         }
-    )
+    );
 console.log(`Respuesta Filter: ${respuestaFilter}`);
 
 // 5) Todos los valores son positivos
+const arregloNumerosEvery = [1,2,3,4,5,6];
+const respuestaEvery = arregloNumerosEvery
+    .every(
+        (valorActual) => {
+            return valorActual > 0
+        }
+    );
+console.log(`Respuesta Every: ${respuestaEvery}`);
+
 // 6) Algun valor es menor que 2 ?
+const arregloNumerosSome = [1,2,3,4,5,6];
+const respuestaSome = arregloNumerosSome
+    .some(
+        (valorActual) => {
+            return valorActual < 2
+        }
+    );
+console.log(`Respuesta Some: ${respuestaSome}`);
+
 // 7) Sumar todos los valores
+// numero < 4 -> 10% + 5
+// numero >= 4 -> 15% + 3
+const arregloNumerosReduce = [1,2,3,4,5,6];
+const valorDondeEmpiezaCalculo = 0;
+const respuestaReduce = arregloNumerosReduce
+    .reduce(
+        (acumulado, valorActual) => {
+            if (valorActual < 4) {
+                return  acumulado + valorActual*1.1 + 5;
+            } else {
+                return acumulado + valorActual*1.15 + 3;
+            }
+        },
+        valorDondeEmpiezaCalculo
+    );
+console.log(`Respuesta Reduce: ${respuestaReduce}`);
+
 // 8) Restar todos los valores de 100
+const arregloNumerosCien = [1,2,3,4,5,6];
+const valorDondeEmpiezaCien = 100;
+const respuestaCien = arregloNumerosCien
+    .reduce(
+        (acumulado, valorActual) => {
+            return acumulado - valorActual;
+        },
+        valorDondeEmpiezaCien
+    );
+console.log(`Respuesta Reduce2: ${respuestaCien}`);
 
-
+const arregloEjercicio = [1,2,3,4,5,6];
 // 1.1) Sumar 10 a todos
 // 1.2) Filtrar a los mayores a 15
 // 1.3) Si exite algun numero mayor a 30
+const respuestaEjercicio = arregloEjercicio
+    .map(
+        (valorActual) => {
+            return valorActual + 10;
+        }
+    ).filter(
+    (valorActual) => {
+        return valorActual > 15;
+    }
+).some(
+    (valorActual) => {
+        return valorActual > 30;
+    });
+console.log(`Respuesta Ejercicio: ${respuestaEjercicio}`);
