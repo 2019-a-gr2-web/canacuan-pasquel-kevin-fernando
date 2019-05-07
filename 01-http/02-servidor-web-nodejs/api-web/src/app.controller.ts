@@ -1,6 +1,7 @@
 import {Body, Controller, Delete, Get, Headers, HttpCode, Param, Post, Put, Query, Request, Response} from '@nestjs/common';
 import { AppService } from './app.service'
 import * as Joi from '@hapi/joi'
+import {options} from "tsconfig-paths/lib/options";
 
 
 
@@ -176,9 +177,23 @@ export class AppController {
     inicio(
         @Response() res
     ) {
-        return res.render('inicio');
+        return res.render(
+            'inicio',
+            {
+                estaVivo: true
+        });
     }
 
+    @Get('/peliculas')
+    peliculas(
+        @Response() res
+    ) {
+        return res.render(
+            'peliculas/inicio.ejs',
+            {
+
+            });
+    }
 
 
 }
@@ -199,7 +214,7 @@ class usuario {
   }
 
   @metodoA()
-  public metodoPublico(@parametroA() a) {}
+  publico metodoPublico(@parametroA() a) {}
   @metodoB()
   private metodoPrivado() {}
   protected metodoProtegido () {}
