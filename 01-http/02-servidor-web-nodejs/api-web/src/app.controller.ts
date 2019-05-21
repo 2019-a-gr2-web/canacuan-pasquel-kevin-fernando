@@ -8,6 +8,9 @@ import {options} from "tsconfig-paths/lib/options";
 
 @Controller('/api')
 export class AppController {
+
+    arregloUsuario = [];
+
     constructor(private readonly appService: AppService) {}
 
     @Post()   //metodo http
@@ -204,10 +207,8 @@ export class AppController {
     }
 
 
+
 }
-
-
-
 
 /*
 class usuario {
