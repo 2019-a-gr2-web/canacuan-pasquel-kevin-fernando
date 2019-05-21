@@ -14,11 +14,10 @@
     <style>
 
         .modelo-cajas {
-            border-color: brown;
-            border-style: solid;
             border-width: 10px;
             border-right-width: 0px;
-            padding: 10px
+            padding: 10px;
+            color: white;
         }
 
         .separador {
@@ -47,7 +46,7 @@
         }
 
         .fondoUno {
-            background-color: lightslategrey;
+            background-color: black;
         }
 
         .fondoDos {
@@ -63,6 +62,23 @@
             background-color: white;
         }
 
+        h1 {
+            font-size: 90px;
+            color: white;
+        }
+
+        h3 {
+            font-size: 19px;
+        }
+
+        .nav{
+            background-color: darkslategrey;
+        }
+
+        .fondoSignUp {
+            color: white;
+        }
+
 
 
 
@@ -73,136 +89,136 @@
 
 <body class="fondoUno">
 
-<div class="container">
-    <div class="row">
-        <!-- .col-sm-5*3 -->
-        <!-- .col-sm-5*3>h1 -->
-        <div class="col-sm-1 menuTop">
-            <h6>ICONO</h6>
-        </div>
-        <div class="col-sm-1 menuTop">
-            <h6>Why Github ?</h6>
-        </div>
-        <div class="col-sm-1 menuTop">
-            <h6>Enterprise</h6>
-        </div>
-        <div class="col-sm-1 menuTop">
-            <h6>Explore</h6>
-        </div>
-        <div class="col-sm-1 menuTop">
-            <h6>Marketplace</h6>
-        </div>
-        <div class="col-sm-1 menuTop">
-            <h6>Pricing</h6>
-        </div>
-        <div class="col-sm-1 menuTop">
-            <h6></h6>
-        </div>
-        <div class="col-sm-1 separador menuTop">
-            <h6></h6>
-        </div>
-        <div class="col-sm-1 separador menuTop">
-            <h6></h6>
-        </div>
-        <div class="col-sm-1 separador menuTop">
-            <h6></h6>
-        </div>
-        <div class="col-sm-1 menuTop">
-            <h6>
-                <label for="busqueda">Busqueda</label>
-                <input id="busqueda" type="text">
-            </h6>
-        </div>
-        <div class="col-sm-1 menuTop">
-            <h6>
-                <button class="btn btn-dark">Sign up</button>
-            </h6>
-        </div>
-    </div>
+<div class="container fondoDos">
+    <ul class="nav nav-pills">
+        <li class="nav-item2">
+            <a class="nav active modelo-cajas" href="https://github.com">Icono</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle modelo-cajas" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">Why GitHub ?</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Features</a>
+                <a class="dropdown-item" href="#">Code review</a>
+                <a class="dropdown-item" href="#">Project management</a>
+                <a class="dropdown-item" href="#">Integrations</a>
+                <a class="dropdown-item" href="#"Actions></a>
+                <a class="dropdown-item" href="#">Package registry</a>
+                <a class="dropdown-item" href="#">Team managment</a>
+                <a class="dropdown-item" href="#">Social coding</a>
+                <a class="dropdown-item" href="#">Documentation</a>
+                <a class="dropdown-item" href="#">Code hosting</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Customer stories</a>
+                <a class="dropdown-item" href="#">Security</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav active modelo-cajas" href="https://github.com/enterprise">Enterprise</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle modelo-cajas" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Explore</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Explore GitHub</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Learn & contribute</a>
+                <a class="dropdown-item" href="#">Topics</a>
+                <a class="dropdown-item" href="#">Collections</a>
+                <a class="dropdown-item" href="#">Trending</a>
+                <a class="dropdown-item" href="#">Learning Lab</a>
+                <a class="dropdown-item" href="#">Open source guides</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Connect with others</a>
+                <a class="dropdown-item" href="#">Events</a>
+                <a class="dropdown-item" href="#">Community forum</a>
+                <a class="dropdown-item" href="#">GitHub Edcation</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav active modelo-cajas" href="https://github.com/marketplace">Marketplace</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle modelo-cajas" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pricing</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Plans</a>
+                <a class="dropdown-item" href="#">Compare plans</a>
+                <a class="dropdown-item" href="#">Contact Sales</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Nonprofit</a>
+                <a class="dropdown-item" href="#">Education</a>
+            </div>
+        </li>
+        <li class="separador modelo-cajas"></li>
+        <li class="separador modelo-cajas"></li>
+        <li class="separador modelo-cajas"></li>
+        <li class="separador modelo-cajas"></li>
+        <li class="separador modelo-cajas"></li>
+        <li class="separador modelo-cajas"></li>
+        <li class="separador modelo-cajas"></li>
+        <li class="separador modelo-cajas"></li>
+
+        <li class="nav modelo-cajas">
+            <label for="searchGitHub"></label>
+            <input type="text" class="form-control" id="searchGitHub" aria-describedby="userHelp" placeholder="Search GitHub">
+        </li>
+
+        <li>
+            <button type="submit" class="btn btn-dark modelo-cajas">Sign in</button>
+        </li>
+
+        <li>
+            <button type="submit" class="btn btn-outline-dark fondoSignUp modelo-cajas" tabindex="-1">Sign up</button>
+        </li>
+
+    </ul>
 </div>
 
-<div class="row separador fondoDos"></div>
+<div class="row separador fondoUno"></div>
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-7 fondoDos">
-            <div class="column text-center">
-                <h3>
+        <div class="col-sm-5 fondoUno">
+            <div class="column text-left">
+                <h1>
                     Built for developers
-                </h3>
+                </h1>
             </div>
-            <div class="column text-center fondoDos">
-                <p>GitHub is a development platform inspired by the way
+            <div class="column text-left fondoUno">
+                <h3 class="text-muted">GitHub is a development platform inspired by the way
                     you work. From <a href="https://github.com/open-source"
-                                      class="text-ghostwhite jumbotron-link">open source
+                                      class="text-white jumbotron-link">open source
                     </a> to <a href="https://github.com/enterprise"
-                               class="text-ghostwhite jumbotron-link"> business
+                               class="text-white jumbotron-link"> business
                     </a>, you can host
                     and review code, manage projects, and build software
-                    alongside 36 million developers.</p>
+                    alongside 36 million developers.</h3>
             </div>
         </div>
+
+        <div class="col-sm-2 fondoUno"></div>
 
 
         <div class="col-sm-5 formulario">
-            <form action="">
-                <div class="column">
-                    <div class="column">
-                        <h6 class="textLabelFormulario">
-                            Username
-                        </h6>
-                    </div>
-                    <div class="column">
-                        <label for="username"></label>
-                        <input id="username" type="text">
-                    </div>
+            <form>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" aria-describedby="userHelp" placeholder="Pick a username">
                 </div>
-
-                <div class="column">
-                    <div class="column">
-                        <h6 class="textLabelFormulario">
-                            Email
-                        </h6>
-                    </div>
-                    <div class="column">
-                        <label for="email"></label>
-                        <input id="email" type="email">
-                    </div>
+                <div class="form-group">
+                    <label for="email">Username</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="userHelp" placeholder="you@example.com">
                 </div>
-
-                <div class="column">
-                    <div class="column">
-                        <h6 class="textLabelFormulario">
-                            Password
-                        </h6>
-                    </div>
-                    <div class="column">
-                        <label for="password"></label>
-                        <input id="password" type="password">
-                    </div>
-                </div>
-
-                <div class="column">
-                    <h6>
-                        Make sure it's at least 15 characters OR at least 80
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Create a password">
+                    <small id="password" class="form-text text-muted">Make sure it's at least 15 characters OR at least 80
                         characters including a number and a lowercase letter.
                         <a href="https://help.github.com/en/articles/creating-a-strong-password"
-                           class="text-blue jumbotron-link">Lean more.</a>
-                    </h6>
+                           class="text-blue jumbotron-link">Lean more.</a></small>
                 </div>
-
-                <div class="column">
-                    <button type="button" class="btn  btn-lg btn-success">Sign up for <Github></Github></button>
+                <div style="text-align: center;">
+                    <button type="submit" class="btn btn-success modelo-cajas">Sign up for GitHub</button>
                 </div>
-
-                <div class="column">
-                    <h6>
-                        By clicking “Sign up for GitHub”, you agree to our terms of
-                        service and privacy statement. We’ll occasionally send
-                        you account related emails.
-                    </h6>
-                </div>
-
+                <small id="" class="form-text text-muted">By clicking “Sign up for GitHub”, you agree to our terms of service and privacy statement. We’ll occasionally send you account related emails.</small>
             </form>
         </div>
     </div>
