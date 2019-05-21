@@ -13,6 +13,11 @@ export class AppController {
 
     constructor(private readonly appService: AppService) {}
 
+    @Get()
+    getHello(){
+
+    }
+
     @Post()   //metodo http
     @HttpCode(200)
     postHello() {
