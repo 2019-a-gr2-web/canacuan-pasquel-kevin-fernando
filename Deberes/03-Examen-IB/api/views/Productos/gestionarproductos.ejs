@@ -15,51 +15,48 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <style>
+        .separador {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 320px;
+        }
+    </style>
+
 </head>
+
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Examen Web - Kevin Canacuan</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <a class="navbar-brand" href="/">Examen Web GR2</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav m-auto">
-            <li class="nav-item active" style="padding-right: 60px;">
-                <a>
-                        <span>
-                           <%= nombre%>
-                        </span>
-
-                </a>
-            </li>
-        </ul>
-
-        <ul class="navbar-nav ml-auto" id="navbarSupportedContent">
-            <li id="btn-salir" class="nav-item active">
-                <form action="/examen/borrarCookie" method="POST">
-                    <button type="submit" class="btn btn-primary"style="background-color: lightblue">Salir</button>
-
-                </form>
-
-            </li>
-        </ul>
-    </div>
-
-
-
-
-
-
-</nav>
+        <div class="collapse navbar-collapse separador" id="navbarSupportedContent" >
+            <ul class="navbar-nav mr-auto" >
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
+                             <span>
+                                   <%= nombre%>
+                             </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <form class="form-inline my-2 my-lg-0" action="/examen/borrarCookie" method="POST">
+                <button class="btn btn-danger" type="submit">SALIR</button>
+            </form>
+        </div>
+    </nav>
 
 
 
 <div class="container">
-    <div class="row">
+
+    <div class="row" align="center">
         <div class="col-md-12">
             <form action="/examen/tienda/buscarProducto/" method="POST">
 
@@ -67,34 +64,26 @@
                     <div class="row">
                         <div class="col-md-9">
                             <div class="form-group">
-                                <label for="busquedaProductos">Búsqueda</label>
+                                <label for="busquedaProductos">Buscar Medicamentos</label>
                                 <input class="form-control" id="busquedaProductos" name="busquedaProductos" type="text">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="d-flex justify-content-center">
-
-                                <button type="submit" class=" mt-4 btn btn-primary" >Buscar</button>
-
+                                <button type="submit" class="btn btn-info" >Buscar</button>
                             </div>
                             <div class="mt-3 d-flex justify-content-center">
                                 <a href="/examen/tienda/crearProducto/<%=id%>">
-
-                                    <button type="button" class="btn btn-primary" >Crear</button>
-
+                                    <button type="button" class="btn btn-info" >Crear</button>
                                 </a>
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </form>
         </div>
-
-
-
     </div>
+
     <div class="row mt-5">
         <div class="col-md-12">
             <table class="ml-5">
@@ -121,7 +110,9 @@
                             <form action="/examen/tienda/eliminarProductos" method="post">
                                 <input id="idProducto" name="idProducto" type="number" value="<%= productos.id %>"hidden>
                                 <input id="tiendaIdProd" name="tiendaIdProd" type="number" value="<%= productos.tiendaId %>" hidden >
-                                <button>Borrar</button>
+                                <button class="btn btn-danger">
+                                    Borrar
+                                </button>
                             </form>
                         </td>
                     </tr>
