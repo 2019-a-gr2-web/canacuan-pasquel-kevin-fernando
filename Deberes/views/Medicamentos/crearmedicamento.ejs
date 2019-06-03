@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Crear Tienda</title>
+    <meta charset ="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        .separador {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 320px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Examen Web - Kevin Canacuan</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse separador" id="navbarSupportedContent" >
+            <ul class="navbar-nav mr-auto" >
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
+                             <span>
+                                   <%= nombre%>
+                             </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <form class="form-inline my-2 my-lg-0" action="/examen/borrarCookie" method="POST">
+                <button class="btn btn-danger" type="submit">SALIR</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div>
+            <form action="/examen/paciente/crearMedicamento" method="post">
+                <h1 align="center">Ingrese los datos de los Medicamentos</h1>
+
+                <form action="/examen/paciente/crearMedicamento"
+                      method="post">
+
+                    <div class="form-group row">
+                        <label for="gramosAIngerir" class="col-sm-2 col-form-label">Gramos a ingerir</label>
+                        <div class="col-sm-10">
+                            <input min="0"
+                                   max="100"
+                                   step="0.1"
+                                   type="number"
+                                   class="form-control"
+                                   id="gramosAIngerir"
+                                   placeholder="Gramos a ingerir">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="nombreMedicamento" class="col-sm-2 col-form-label">Nombre</label>
+                        <div class="col-sm-10">
+                            <input type="text"
+                                   class="form-control"
+                                   id="nombreMedicamento"
+                                   placeholder="Nombre del medicamento">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="composicionMedicamento" class="col-sm-2 col-form-label">Composicion</label>
+                        <div class="col-sm-10">
+                            <input type="text"
+                                   class="form-control"
+                                   id="composicionMedicamento"
+                                   placeholder="Composicion del medicamento">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="usadoPara" class="col-sm-2 col-form-label">Usado para</label>
+                        <div class="col-sm-10">
+                            <input type="text"
+                                   class="form-control"
+                                   id="usadoPara"
+                                   placeholder="Proposito del medicamento">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="fechaCaducidadMedicamento" class="col-sm-2 col-form-label">Fecha de caducidad</label>
+                        <div class="col-sm-10">
+                            <input type="date"
+                                   class="form-control"
+                                   id="fechaCaducidadMedicamento">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="numeroDePastillas" class="col-sm-2 col-form-label">Numero de Pastillas</label>
+                        <div class="col-sm-10">
+                            <input type="number"
+                                   class="form-control"
+                                   id="numeroDePastillas"
+                                   placeholder="Numero de pastillas del medicamento">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="pacienteId" class="col-sm-2 col-form-label">Paciente ID</label>
+                        <div class="col-sm-10">
+                            <input type="number"
+                                   class="form-control"
+                                   id="pacienteId"
+                                   value="<%=id%>"
+                                   disabled>
+                        </div>
+                    </div>
+
+                    <div align="center">
+                        <button type="submit" class="btn btn-success">
+                            Crear
+                        </button>
+                        <a href="/examen/tienda/gestionarProductos/<%=id%>">
+                            <button type="button" class="btn btn-danger">
+                                Cancelar
+                            </button>
+                        </a>
+                    </div>
+
+                </form>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+</html>
