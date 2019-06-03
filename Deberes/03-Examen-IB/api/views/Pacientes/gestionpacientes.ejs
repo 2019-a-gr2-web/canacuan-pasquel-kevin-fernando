@@ -1,20 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
-<style>
-    table,tr,td,th{
-        border: solid black 1px;
-    }
-</style>
 <head>
-    <title>Gestion Tiendas</title>
+    <title>Gestion Pacientes</title>
     <meta charset ="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <style>
         .separador {
@@ -22,6 +13,11 @@
             margin-bottom: 10px;
             margin-left: 320px;
         }
+
+        table,tr,td,th{
+             border: solid black 1px;
+        }
+
     </style>
 
 </head>
@@ -58,14 +54,14 @@
     <div class="container">
         <div class="row" align="center">
             <div class="col-md-12">
-                <form action="/examen/buscarTienda" method="POST">
+                <form action="/examen/buscarPacientes" method="POST">
 
                     <div class="mt-5 d-flex justify-content-center">
                         <div class="row">
                             <div class="col-md-9">
                                 <div class="form-group">
-                                    <label for="busquedaTiendas">Buscar Pacientes</label>
-                                    <input class="form-control" id="busquedaTiendas" name="busquedaTiendas" type="text">
+                                    <label for="busquedaPacientes">Buscar Pacientes</label>
+                                    <input class="form-control" id="busquedaPacientes" name="busquedaPacientes" type="text">
                                 </div>
                             </div>
                             <div class="col-md-3">
@@ -73,7 +69,7 @@
                                     <button type="submit" class="btn btn-info" >Buscar</button>
                                 </div>
                                 <div class="mt-3 d-flex justify-content-center">
-                                    <a href="/examen/crearTienda">
+                                    <a href="/examen/crearPaciente">
                                         <button type="button" class="btn btn-info" >Crear</button>
                                     </a>
                                 </div>
@@ -92,31 +88,33 @@
 
         <div class="row mt-5" align="center">
             <div class="col-md-12">
-                <table class="ml-5">
+                <table class="table table-bordered ml-5">
                     <tr>
-                        <th>Nombre</th>
-                        <th>Direccion</th>
-                        <th>Fecha Apertura</th>
-                        <th>RUC</th>
-                        <th>Matriz</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>Fecha Nacimiento</th>
+                        <th>#Hijos</th>
+                        <th>Seguro</th>
                         <th>Acciones</th>
                     </tr>
-                    <% arregloTiendas.forEach((tienda)=>{ %>
+                    <% arregloPacientes.forEach((paciente)=>{ %>
                         <tr>
-                            <td> <%= tienda.nombre %> </td>
-                            <td> <%= tienda.direccion %> </td>
-                            <td> <%= tienda.fechaApertura %> </td>
-                            <td> <%= tienda.RUC %> </td>
-                            <td> <%= tienda.matriz %> </td>
+                            <td> <%= paciente.nombres %> </td>
+                            <td> <%= paciente.apellidos %> </td>
+                            <td> <%= paciente.fechaNacimiento %> </td>
+                            <td> <%= paciente.numeroHijos %> </td>
+                            <td> <%= paciente.tieneSeguro %> </td>
                             <td>
-                                <a href="/examen/tienda/gestionarProductos/<%=tienda.id%>">
-                                    <button class="btn btn-info">
-                                        Gestionar Hijos
-                                    </button>
-                                </a>
+                                <div align="center">
+                                    <a href="/examen/paciente/gestionarMedicamentos/<%=paciente.id%>">
+                                        <button class="btn btn-info">
+                                            Gestionar Medicamentos
+                                        </button>
+                                    </a>
+                                </div>
                                 <div align="center">
                                     <form action="/examen/eliminar" method="post">
-                                        <input id="id" name="id" type="number" value="<%= tienda.id %>"  hidden >
+                                        <input id="id" name="id" type="number" value="<%=paciente.id %>"  hidden >
                                         <button class="btn btn-danger">
                                             Borrar
                                         </button>

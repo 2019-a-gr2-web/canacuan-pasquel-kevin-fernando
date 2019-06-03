@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Crear Paciente</title>
+    <meta charset ="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        .separador {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 320px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Examen Web - Kevin Canacuan</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse separador" id="navbarSupportedContent" >
+            <ul class="navbar-nav mr-auto" >
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
+                             <span>
+                                   <%= nombre%>
+                             </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <form class="form-inline my-2 my-lg-0" action="/examen/borrarCookie" method="POST">
+                <button class="btn btn-danger" type="submit">SALIR</button>
+            </form>
+        </div>
+    </nav>
+
+   <div class="container">
+        <div>
+            <form action="/examen/crearPaciente" method="post">
+                <h1 align="center">Ingrese los siguientes datos del Paciente</h1>
+
+                <form action="/examen/crearPaciente"
+                      method="post">
+
+                    <div class="form-group row">
+                        <label for="nombresPaciente" class="col-sm-2 col-form-label">Nombres</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="nombresPaciente" placeholder="Ingrese los nombres del paciente">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="apellidosPaciente" class="col-sm-2 col-form-label">Apellidos</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="apellidosPaciente" placeholder="Ingrese los apellidos del paciente">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="fechaNacimientoPaciente" class="col-sm-2 col-form-label">Fecha de nacimiento</label>
+                        <div class="col-sm-10">
+                            <input type="date" class="form-control" id="fechaNacimientoPaciente">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="hijosPaciente" class="col-sm-2 col-form-label">Hijos</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="hijosPaciente" placeholder="Numero de hijos del paciente">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="seguroPaciente" class="col-sm-2 col-form-label">¿ Posee Seguro ?</label>
+                        <div class="col-sm-10" align="center">
+                            <input type="radio" class="form-check-input" id="seguroPaciente">
+                        </div>
+                    </div>
+
+                    <div align="center">
+                        <button type="submit" class="btn btn-success">
+                            Crear Paciente
+                        </button>
+                        <a href="/examen/gestionarPacientes">
+                            <button type="button" class="btn btn-danger">
+                                Cancelar
+                            </button>
+                        </a>
+                    </div>
+
+                </form>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

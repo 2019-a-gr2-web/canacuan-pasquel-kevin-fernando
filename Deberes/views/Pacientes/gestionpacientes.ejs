@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Gestion Pacientes</title>
+    <meta charset ="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        .separador {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 320px;
+        }
+
+        table,tr,td,th{
+             border: solid black 1px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Examen Web - Kevin Canacuan</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse separador" id="navbarSupportedContent" >
+            <ul class="navbar-nav mr-auto" >
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
+                         <span>
+                               <%= nombre%>
+                         </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <form class="form-inline my-2 my-lg-0" action="/examen/borrarCookie" method="POST">
+                <button class="btn btn-danger" type="submit">SALIR</button>
+            </form>
+        </div>
+    </nav>
+
+
+
+    <div class="container">
+        <div class="row" align="center">
+            <div class="col-md-12">
+                <form action="/examen/buscarPaciente" method="POST">
+
+                    <div class="mt-5 d-flex justify-content-center">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="form-group">
+                                    <label for="busquedaPacientes">Buscar Pacientes</label>
+                                    <input class="form-control" id="busquedaPacientes" name="busquedaPacientes" type="text">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="d-flex justify-content-center">
+                                    <button type="submit" class="btn btn-info" >Buscar</button>
+                                </div>
+                                <div class="mt-3 d-flex justify-content-center">
+                                    <a href="/examen/crearPaciente">
+                                        <button type="button" class="btn btn-info" >Crear</button>
+                                    </a>
+                                </div>
+                                <div class="mt-3 d-flex justify-content-center">
+                                    <a href="/examen/bienvenido">
+                                        <button type="button" class="btn btn-warning" >Regresar</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="row mt-5" align="center">
+            <div class="col-md-12">
+                <table class="table table-bordered ml-5">
+                    <tr>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>Fecha Nacimiento</th>
+                        <th>#Hijos</th>
+                        <th>Seguro</th>
+                        <th>Acciones</th>
+                    </tr>
+                    <% arregloPacientes.forEach((paciente)=>{ %>
+                        <tr>
+                            <td> <%= paciente.nombres %> </td>
+                            <td> <%= paciente.apellidos %> </td>
+                            <td> <%= paciente.fechaNacimiento %> </td>
+                            <td> <%= paciente.numeroHijos %> </td>
+                            <td> <%= paciente.tieneSeguro %> </td>
+                            <td>
+                                <a href="/examen/paciente/gestionarMedicamentos/<%=paciente.id%>">
+                                    <button class="btn btn-info">
+                                        Gestionar Medicamentos
+                                    </button>
+                                </a>
+                                <div align="center">
+                                    <form action="/examen/eliminar" method="post">
+                                        <input id="id" name="id" type="number" value="<%=paciente.id %>"  hidden >
+                                        <button class="btn btn-danger">
+                                            Borrar
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
