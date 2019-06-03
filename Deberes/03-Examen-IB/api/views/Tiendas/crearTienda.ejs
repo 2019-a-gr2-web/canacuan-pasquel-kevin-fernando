@@ -11,88 +11,139 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <style>
+        .separador {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 320px;
+        }
+    </style>
+
 </head>
+
 <body>
-<!-- header 1-6-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Examen Web - Kevin Canacuan</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <a class="navbar-brand" href="/">Examen Web GR2</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav m-auto">
-            <li class="nav-item active" style="padding-right: 60px;">
-                <a>
-                        <span>
-                           <%= nombre%>
-                        </span>
-
-                </a>
-            </li>
-        </ul>
-
-        <ul class="navbar-nav ml-auto" id="navbarSupportedContent">
-            <li id="btn-salir" class="nav-item active">
-                <form action="/examen/borrarCookie" method="POST">
-                    <button type="submit" class="btn btn-primary"style="background-color: lightblue">Salir</button>
-                </form>
-
-            </li>
-        </ul>
-    </div>
-
-
-
-
-
-
-</nav>
-
-<div class="container">
-    <div class="mt-5 d-flex justify-content-center">
-        <form action="/examen/crearTienda" method="post">
-            <h1>Formulario de Creación de tiendas</h1>
-            <p>Crea una nueva tienda.</p>
-
-            <form action="/examen/crearTienda"
-                  method="post">
-
-                <label for="nombreId">Nombre Tienda</label>
-                <input id="nombreTiendaId" name="nombre" type="text">
-                <br>
-                <label for="direccionId">Direccion</label>
-                <input id="direccionId" name="direccion" type="text">
-                <br>
-                <label for="fechaAperturaId">Fecha de Apertura</label>
-                <input id="fechaAperturaId" name="fechaApertura" type="date">
-
-                <br>
-                <label for="RUCId">RUC</label>
-                <input id="RUCId" name="RUC" type="number" min="0">
-                <br>
-                <label for="MatrizId">Matriz</label>
-                <input id="MatrizId" name="matriz" type="radio">
-                <br>
-                <!--<button type="reset">Reset</button>-->
-                <!--<button type="submit">Submit</button>-->
-                <a href="/examen/listaTiendas">
-                    <button type="button">Cancelar</button>
-                </a>
-                <button>Enviar Informacion</button>
+        <div class="collapse navbar-collapse separador" id="navbarSupportedContent" >
+            <ul class="navbar-nav mr-auto" >
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
+                             <span>
+                                   <%= nombre%>
+                             </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <form class="form-inline my-2 my-lg-0" action="/examen/borrarCookie" method="POST">
+                <button class="btn btn-danger" type="submit">SALIR</button>
             </form>
-        </form>
+        </div>
+    </nav>
 
-        <br>
+    <div class="container">
+        <div class="mt-5 d-flex justify-content-center">
+            <form action="/examen/crearTienda" method="post">
+                <h1>Formulario de Creación de tiendas</h1>
+                <p>Crea una nueva tienda.</p>
+
+                <form action="/examen/crearTienda"
+                      method="post">
+
+                    <label for="nombreId">Nombre Tienda</label>
+                    <input id="nombreTiendaId" name="nombre" type="text">
+                    <br>
+                    <label for="direccionId">Direccion</label>
+                    <input id="direccionId" name="direccion" type="text">
+                    <br>
+                    <label for="fechaAperturaId">Fecha de Apertura</label>
+                    <input id="fechaAperturaId" name="fechaApertura" type="date">
+
+                    <br>
+                    <label for="RUCId">RUC</label>
+                    <input id="RUCId" name="RUC" type="number" min="0">
+                    <br>
+                    <label for="MatrizId">Matriz</label>
+                    <input id="MatrizId" name="matriz" type="radio">
+                    <br>
+                    <!--<button type="reset">Reset</button>-->
+                    <!--<button type="submit">Submit</button>-->
+                    <a href="/examen/listaTiendas">
+                        <button type="button">Cancelar</button>
+                    </a>
+                    <button>Enviar Informacion</button>
+                </form>
+            </form>
+
+            <br>
+        </div>
     </div>
-</div>
 
+    <div class="container">
+        <div>
+            <form action="/examen/crearTienda" method="post">
+                <h1 align="center">Crear un Paciente</h1>
 
+                <form action="/examen/crearTienda"
+                      method="post">
 
+                    <div class="form-group row">
+                        <label for="nombresPaciente" class="col-sm-2 col-form-label">Nombres</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="nombresPaciente" placeholder="Ingrese los nombres del paciente">
+                        </div>
+                    </div>
 
+                    <div class="form-group row">
+                        <label for="apellidosPaciente" class="col-sm-2 col-form-label">Apellidos</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="apellidosPaciente" placeholder="Ingrese los apellidos del paciente">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="fechaNacimientoPaciente" class="col-sm-2 col-form-label">Fecha de nacimiento</label>
+                        <div class="col-sm-10">
+                            <input type="date" class="form-control" id="fechaNacimientoPaciente">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="hijosPaciente" class="col-sm-2 col-form-label">Hijos</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="hijosPaciente" placeholder="Numero de hijos del paciente">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="seguroPaciente" class="col-sm-2 col-form-label">¿ Posee Seguro ?</label>
+                        <div class="col-sm-10" align="center">
+                            <input type="radio" class="form-check-input" id="seguroPaciente">
+                        </div>
+                    </div>
+
+                    <div align="center">
+                        <button type="submit" class="btn btn-success">
+                            Enviar Informacion
+                        </button>
+                        <a href="/examen/gestionarTiendas">
+                            <button type="button" class="btn btn-danger">
+                                Cancelar
+                            </button>
+                        </a>
+                    </div>
+
+                </form>
+            </form>
+        </div>
+    </div>
 
 </body>
 </html>

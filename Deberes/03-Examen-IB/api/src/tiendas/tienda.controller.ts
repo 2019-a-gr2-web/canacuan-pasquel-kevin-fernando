@@ -15,8 +15,7 @@ export class TiendaController {
 
             response.cookie('nombreUsuario', nombre,{signed: true});
             cookieSeg.nombreUsuario=nombre;
-
-
+            
         }
         if (cookieSeg.nombreUsuario) {
 
@@ -27,18 +26,7 @@ export class TiendaController {
         }
 
     }
-    @Get('/gestionarTiendas')
-    gestionarTiendas(@Request() request, @Response() response) {
-        const cookieSeg = request.signedCookies;
-        const arregloTiendas = this.tiendaService.bddTiendas;
-        if (cookieSeg.nombreUsuario) {
-            return response.render('Tiendas/gestiontiendas',{arregloTiendas:arregloTiendas,nombre:cookieSeg.nombreUsuario})
-        } else {
-            return response.redirect('/examen/inicioSesion');
-        }
-
-
-    }
+    
 
 
     @Get('/gestionTiendas')
@@ -78,22 +66,7 @@ export class TiendaController {
         }
     }
 
-    @Get('/bienvenido')
-    bienvenido(@Response() res,  @Request() request){
-        const cookieSeg = request.signedCookies;
 
-        if (cookieSeg.nombreUsuario) {
-
-            return res.render('paginaprincipal',{
-                nombre:cookieSeg.nombreUsuario
-            })
-        }
-        else{
-            return res.redirect('/examen/inicioSesion');
-        }
-
-
-    }
     @Get('/crearTienda')
     crearTienda( @Res() res,@Request() request){
         const cookieSeg = request.signedCookies;
@@ -174,6 +147,34 @@ export class TiendaController {
             }
 
         }
+    }
+
+    //-----------------------------------
+
+    @Get('/bienvenido')
+    bienvenido(@Response() res,  @Request() request){
+        const cookieSeg = request.signedCookies;
+        if (cookieSeg.nombreUsuario) {
+            return res.render('paginaprincipal',{
+                nombre:cookieSeg.nombreUsuario
+            })
+        }
+        else{
+            return res.redirect('/examen/inicioSesion');
+        }
+    }
+
+    @Get('/gestionarTiendas')
+    gestionarTiendas(@Request() request, @Response() response) {
+        const cookieSeg = request.signedCookies;
+        const arregloTiendas = this.tiendaService.bddTiendas;
+        if (cookieSeg.nombreUsuario) {
+            return response.render('Tiendas/gestiontiendas',{arregloTiendas:arregloTiendas,nombre:cookieSeg.nombreUsuario})
+        } else {
+            return response.redirect('/examen/inicioSesion');
+        }
+
+
     }
 
 }
