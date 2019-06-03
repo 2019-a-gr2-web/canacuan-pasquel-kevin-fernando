@@ -47,7 +47,7 @@ export class ProductosController {
 
         if (cookieSeg.nombreUsuario) {
 
-            return res.render('Productos/crearproductos',{
+            return res.render('Productos/crearproducto',{
                 nombre:cookieSeg.nombreUsuario,
                 id:id
             })
