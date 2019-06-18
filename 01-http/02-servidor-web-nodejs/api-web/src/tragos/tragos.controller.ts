@@ -9,40 +9,46 @@ import {Trago} from "./interfaces/trago";
     }
 
     @Get('lista')
-    listarTragos(
-        @Res() res
-    ){
-        const arregloTragos = this._tragosService.bddTragos;
-        res.render('tragos/listar-tragos',{
-            arregloTragos:arregloTragos
-        })
+    async listarTragos(
+        @Res() res,
+    ) {
+        const arregloTragos = await this._tragosService.buscar();
+        res.render('tragos/listar-tragos', {
+            arregloTragos: arregloTragos,
+        });
     }
 
     @Get('crear')
     crearTrago(
-        @Res() res
+        @Res() res,
     ) {
-        res.render('tragos/crear-editar')
+        res.render('tragos/crear-editar');
     }
 
     @Post('crear')
-    crearTragoPost(
-        @Body() trago:Trago,
+    async crearTragoPost(
+        @Body() trago: Trago,
         @Res() res,
     //     @Body('nombre') nombre:string,
     //     @Body('tipo') tipo:string,
     //     @Body('gradosAlcohol') gradosAlcohol:number,
     //     @Body('fechaCaducidad') fechaCaducidad:Date,
     //     @Body('precio') precio:number,
-    ){
+    ) {
         trago.gradosAlcohol = Number(trago.gradosAlcohol);
         trago.precio = Number(trago.precio);
         trago.fechaCaducidad = new Date(trago.fechaCaducidad);
-        console.log(trago);
 
-        this._tragosService.crear(trago);
+        try {
+            const respuestaCrear = await this._tragosService.crear(trago);   // Promesa
+            console.log('RESPUESTA: ', respuestaCrear);
+            res.redirect('/api/traguito/lista');
+        } catch (e) {
+            console.log(e);
+            res.status(500);
+            res.send({mensaje: 'Error', codigo: 500});
+        }
 
-        res.redirect('/api/traguito/lista');
     //     console.log('Trago: ',trago), typeof trago;
     //     console.log('nombre: ',nombre, typeof  trago);
     //     console.log('tipo: ',tipo, typeof  trago);
@@ -54,8 +60,8 @@ import {Trago} from "./interfaces/trago";
     @Post('eliminar')
     eliminar(
         @Res() res,
-        @Body() trago:Trago,
+        @Body() trago: Trago,
     ) {
-        //this._tragosService.eliminarPorId(trago);
+        // this._tragosService.eliminarPorId(trago);
     }
 }

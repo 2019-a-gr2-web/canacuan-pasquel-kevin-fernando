@@ -24,8 +24,9 @@ export class TragosService {
 
         const objetoEntidad = this._tragosRepository
             .create(traguito);
+
         this._tragosRepository
-            .save(objetoEntidad)
+            .save(objetoEntidad)    // Promesa
             .then(
                 (datos) => {
                     console.log('Dato creado: ', datos);
@@ -38,11 +39,20 @@ export class TragosService {
             );
     }
 
-    crear(nuevoTrago: Trago): Trago {
-        nuevoTrago.id = this.recnum;
+    buscar(parametrosBusqueda?): Promise<Trago []> {
+        return this._tragosRepository.find(parametrosBusqueda);
+    }
+
+    crear(nuevoTrago: Trago): Promise<Trago> {
+       /* nuevoTrago.id = this.recnum;
         this.recnum++;
         this.bddTragos.push(nuevoTrago);
-        return nuevoTrago;
+        return nuevoTrago; */
+
+       // Codigo con promesas
+       const objetoEntidad = this._tragosRepository
+            .create(nuevoTrago);
+       return this._tragosRepository.save(objetoEntidad);  // Promesa
     }
 
     // @ts-ignore
