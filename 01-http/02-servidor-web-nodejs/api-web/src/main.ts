@@ -13,13 +13,13 @@ async function bootstrap() {
   const app = await NestFactory
       .create(AppModule) as NestExpressApplication;
 
-    app.use(favicon(path.join(__dirname,'..','publico','imagenes','guantelete.ico')));
+  app.use(favicon(path.join(__dirname,'..','publico','imagenes','guantelete.ico')));
 
-    app.use(cookieParser('Me gusta el THC'));
-    app.setViewEngine('ejs');
-    app.setBaseViewsDir(join(__dirname, '..', 'views'));
-    app.use(express.static('publico'));
+  app.use(cookieParser('Me gusta el THC'));
+  app.setViewEngine('ejs');
+  app.setBaseViewsDir(join(__dirname, '..', 'views'));
+  app.use(express.static('publico'));
 
-  await app.listen(3002);
+  await app.listen(3000);
 }
 bootstrap();
