@@ -1,6 +1,6 @@
-import {Column, Entity, PrimaryGeneratedColumn, ManyToOne, OneToMany} from "typeorm";
-import {DistribuidorEntity} from "../distribuidor/distribuidor.entity";
-import {FiestaEntity} from "../fiesta/fiesta.entity";
+import {Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn} from 'typeorm';
+import {DistribuidorEntity} from '../distribuidor/distribuidor.entity';
+import {FiestaEntity} from '../fiesta/fiesta.entity';
 
 @Entity('bd_trago') // Nombre tabla
 export class TragosEntity {
