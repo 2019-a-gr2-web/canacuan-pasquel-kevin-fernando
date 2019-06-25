@@ -1,5 +1,5 @@
-import {Column, Entity, PrimaryGeneratedColumn, ManyToOne} from "typeorm";
-import {TragosEntity} from "../tragos/tragos.entity";
+import {Column, Entity, PrimaryGeneratedColumn, ManyToOne} from 'typeorm';
+import {TragosEntity} from '../tragos/tragos.entity';
 
 @Entity('db_fiesta')
 export class FiestaEntity {

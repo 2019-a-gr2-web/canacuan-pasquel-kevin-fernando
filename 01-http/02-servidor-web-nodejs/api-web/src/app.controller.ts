@@ -1,4 +1,18 @@
-import {Body, Controller, Delete, Get, Headers, HttpCode, Param, Post, Put, Query, Request, Response} from '@nestjs/common';
+import {
+    Body,
+    Controller,
+    Delete,
+    Get,
+    Headers,
+    HttpCode,
+    Param,
+    Post,
+    Put,
+    Query,
+    Request, Res,
+    Response,
+    Session
+} from '@nestjs/common';
 import { AppService } from './app.service'
 import * as Joi from '@hapi/joi'
 import {options} from "tsconfig-paths/lib/options";
@@ -12,6 +26,63 @@ export class AppController {
     arregloUsuario = [];
 
     constructor(private readonly appService: AppService) {}
+
+    @Get('session')
+    session(
+        @Query('nombre') nombre,
+        @Session() session,
+    ) {
+        console.log(session);
+        session.autenticad = true;
+        session.nombreUsuario = nombre;
+        return 'ok';
+    }
+
+    @Get('login')
+    loginVista(
+        @Res() res,
+    ){
+        res.render('login');
+    }
+
+    @Post('login')
+    login(
+        @Body() usuario,
+        @Session() session,
+        @Res() res,
+    ) {
+        if (usuario.username === 'Kevin' && usuario.password === '12345678') {
+            session.username = usuario.username;
+            res.redirect('/api/protegida');
+        } else {
+            res.status(400);
+            res.send({mensaje: 'Error LOGIN', error: 400});
+        }
+    }
+    
+    @Get('protegida')
+    protegida(
+        @Session() session,
+        @Res() res,
+    ) {
+        if (session.username) {
+            res.render('/protegida', {
+                nombre: session.username});
+        } else {
+            res.redirect('/login');
+        }
+    }
+
+    @Get('logout')
+    logout(
+        @Res() res,
+        @Session() session,
+    ) {
+        session.username = undefined;
+        session.destroy();
+        res.redirect('/api/login');
+    }
+
 
     @Get()
     getHello(){
