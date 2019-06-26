@@ -31,54 +31,50 @@ export class AppController {
     session(
         @Query('nombre') nombre,
         @Session() session,
-    ) {
+    ){
         console.log(session);
-        session.autenticad = true;
-        session.nombreUsuario = nombre;
+        session.autenticado=true;
+        session.nombreUsuari=nombre;
         return 'ok';
     }
-
     @Get('login')
     loginVista(
-        @Res() res,
+        @Res() res
     ){
-        res.render('login');
+        res.render('login')
     }
-
     @Post('login')
     login(
         @Body() usuario,
-        @Session() session,
         @Res() res,
-    ) {
-        if (usuario.username === 'Kevin' && usuario.password === '12345678') {
-            session.username = usuario.username;
-            res.redirect('/api/protegida');
-        } else {
+        @Session() session
+    ){
+        if (usuario.username==='kevin'&& usuario.password==='1234'){
+            session.username=usuario.username;
+            res.redirect('/api/protegida')
+        }else{
             res.status(400);
-            res.send({mensaje: 'Error LOGIN', error: 400});
+            res.send({mensaje: 'Error login', error:400});
         }
     }
-    
     @Get('protegida')
     protegida(
         @Session() session,
-        @Res() res,
-    ) {
-        if (session.username) {
-            res.render('/protegida', {
-                nombre: session.username});
-        } else {
-            res.redirect('/login');
+        @Res() res
+    ){
+        if(session.username){
+            res.render('protegida',{
+                nombre:session.username});
+        }else{
+            res.redirect('/api/login');
         }
     }
-
     @Get('logout')
     logout(
         @Res() res,
-        @Session() session,
-    ) {
-        session.username = undefined;
+        @Session() session
+    ){
+        session.username=undefined;
         session.destroy();
         res.redirect('/api/login');
     }
