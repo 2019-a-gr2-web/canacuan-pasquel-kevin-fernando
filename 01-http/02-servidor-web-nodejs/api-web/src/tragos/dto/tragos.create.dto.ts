@@ -1,4 +1,4 @@
-import {IsDate, IsEmpty, IsNotEmpty, IsNumber, IsOptional, IsString} from "../../../node_modules/class-validator";
+import {IsDate, IsEmpty, IsNotEmpty, IsNumber, IsOptional, IsString} from '../../../node_modules/class-validator';
 export class TragosCreateDto{
     @IsEmpty()
     id:number;

@@ -6,7 +6,7 @@
 <% const arreglo = ['Ron', 'Vodka', 'Tequila', 'Whiskey', 'Puntas', 'Cervezas'] %>
 <% const arregloValues = ['Roncito', 'Vodkita', 'Tequilita', 'Whiskicito', 'Puntitas', 'Chelitas'] %>
 <% var creando = typeof trago === "undefined" ? true : false; %>
-<h1> <%= creando ? 'Crear' : 'Actualizar' %> Trago</h1>
+<h1> <%= creando ? 'Crear' : 'Actualizar' %> Tragos</h1>
 <p><%= creando ? 'Creando' : 'Actualizando' %> un trago.</p>
 
 
@@ -16,7 +16,7 @@
     <label for="nombreId">Nombre</label>
     <input id="nombreId" name="nombre" type="text" value="<%= creando ? '' : trago.nombre %>">
     <br>
-    <label for="tipoIdo">Tipo Trago</label>
+    <label for="tipoIdo">Tipo Tragos</label>
     <select name="tipo" id="tipoId">
         <% if(creando){ %>
             <% arreglo.forEach((opcion)=>{ %>
