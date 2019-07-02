@@ -30,34 +30,39 @@ export class AppController {
     @Get('session')
     session(
         @Query('nombre') nombre,
-        @Session() session,
+        @Session() session
     ){
         console.log(session);
-        session.autenticado=true;
-        session.nombreUsuari=nombre;
+        session.autenticado = true;
+        session.nombreUsuario = nombre;
         return 'ok';
     }
-    @Get('login')
+
+    @Get('/login')
     loginVista(
         @Res() res
     ){
-        res.render('login')
+
+        res.render('login');
     }
-    @Post('login')
+
+    @Post('/login')
     login(
         @Body() usuario,
-        @Res() res,
-        @Session() session
+        @Session() session,
+        @Res() res
     ){
-        if (usuario.username==='kevin'&& usuario.password==='1234'){
-            session.username=usuario.username;
-            res.redirect('/api/protegida')
+        if(usuario.username === 'jorge' && usuario.password === '12345678'){
+            //    QUE HACEMOS
+            session.username = usuario.username;
+            res.redirect('/api/protegida');
         }else{
             res.status(400);
-            res.send({mensaje: 'Error login', error:400});
+            res.send({mensaje:'Error login',error:400})
         }
     }
-    @Get('protegida')
+
+    @Get('/protegida')
     protegida(
         @Session() session,
         @Res() res
@@ -72,9 +77,9 @@ export class AppController {
     @Get('logout')
     logout(
         @Res() res,
-        @Session() session
+        @Session() session,
     ){
-        session.username=undefined;
+        session.username = undefined;
         session.destroy();
         res.redirect('/api/login');
     }
