@@ -1,6 +1,6 @@
 import {Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn} from 'typeorm';
-import {DistribuidorEntity} from '../distribuidor/distribuidor.entity';
-import {FiestaEntity} from '../fiesta/fiesta.entity';
+import {DistribuidorEntity} from './distribuidor/distribuidor.entity';
+import {FiestaEntity} from './fiesta/fiesta.entity';
 
 @Entity('bd_trago') // Nombre tabla
 export class TragosEntity {
@@ -20,7 +20,7 @@ export class TragosEntity {
         length: 10,
         name: 'tipo_trago',
     })
-    tipo: 'Ron'|'Vodka'|'Whiskey'|'Tequila'|'Puntas'|'Cerveza';
+    tipo: 'Ron'|'Vodka'|'Whiskey'|'Tequila'|'Puntas'|'Cervezas';
 
     @Column({
         type: 'int',

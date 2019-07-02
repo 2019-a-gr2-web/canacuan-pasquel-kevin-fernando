@@ -1,9 +1,8 @@
-import {Controller, Get, Post, Res, Body, Query, Param} from "@nestjs/common";
-import {TragosService} from "./tragos.service";
-import {Tragos} from "./interfaces/tragos";
-import {TragosCreateDto} from "./dto/tragos.create.dto";
-import {validate} from "class-validator";
-
+import {Controller, Get, Post, Res, Body, Query, Param} from '@nestjs/common';
+import {TragosService} from './tragos.service';
+import {Tragos} from './interfaces/tragos';
+import {TragosCreateDto} from './dto/tragos.create.dto';
+import {validate} from 'class-validator';
 
 @Controller('api/traguito')
 export class TragosController {
@@ -13,28 +12,27 @@ export class TragosController {
     @Get('lista')
     async listarTragos(@Res() res) {
         const arregloTragos = await this._tragosService.buscar();
-        res.render('tragos/lista-tragos', {arregloTragos: arregloTragos})
+        res.render('tragos/lista-tragos', {arregloTragos: arregloTragos});
     }
 
     @Get('crear')
     creaTtragos(@Res() res, @Query('mensaje') mensaje:string) {
         res.render('tragos/crear-editar',
-            {mensaje: mensaje})
+            {mensaje: mensaje});
     }
 
     @Post('crear')
     async crearTragoPost(
         @Body() trago: Tragos,
-        @Res() res
+        @Res() res,
     ) {
         trago.gradosAlcohol = Number(trago.gradosAlcohol);
         trago.precio = Number(trago.precio);
         trago.fechaCaducidad = trago.fechaCaducidad ? new Date(trago.fechaCaducidad) : undefined;
-        let tragoAValidar = new TragosCreateDto();
-
+        const tragoAValidar = new TragosCreateDto();
         tragoAValidar.nombre = trago.nombre;
         tragoAValidar.tipo = trago.tipo;
-        tragoAValidar.fechaCaducidad=trago.fechaCaducidad;
+        tragoAValidar.fechaCaducidad = trago.fechaCaducidad;
         tragoAValidar.precio = trago.precio;
         tragoAValidar.gradosAlcohol = trago.gradosAlcohol;
 

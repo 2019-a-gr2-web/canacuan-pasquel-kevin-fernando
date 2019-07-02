@@ -4,14 +4,15 @@ import { AppService } from './app.service';
 import {TragosModule} from './tragos/tragos.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import {TragosEntity} from "./tragos/tragos.entity";
-import {DistribuidorEntity} from "./distribuidor/distribuidor.entity";
+/* import {DistribuidorEntity} from "./distribuidor/distribuidor.entity";
 import {FiestaEntity} from "./fiesta/fiesta.entity";
 import {DistribuidorModule} from "./distribuidor/distribuidor.module";
-import {FiestaModule} from "./fiesta/fiesta.module";
+import {FiestaModule} from "./fiesta/fiesta.module"; */
+import {ChatModule} from "./chat/chat.module";
 
 @Module({
   imports: [
-      TragosModule,
+      /* TragosModule,
       DistribuidorModule,
       FiestaModule,
       TypeOrmModule.forRoot({
@@ -29,7 +30,8 @@ import {FiestaModule} from "./fiesta/fiesta.module";
           ],
           synchronize: true,
           insecureAuth : true,
-      }),
+      }), */
+      ChatModule,
   ],
   controllers: [AppController],
   providers: [AppService],
