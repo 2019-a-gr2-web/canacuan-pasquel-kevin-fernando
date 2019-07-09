@@ -15,20 +15,21 @@
     <session id="103825339">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.12" value="1" />
-          <entry key="project.open.time.20" value="1" />
+          <entry key="project.open.time.20" value="2" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.25" value="1" />
           <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.33" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="TsLintLanguageService" value="6" />
-          <entry key="TypeScriptServerServiceImpl" value="6" />
+          <entry key="TsLintLanguageService" value="8" />
+          <entry key="TypeScriptServerServiceImpl" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -52,14 +53,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="ejs" value="309" />
-          <entry key="html" value="538" />
+          <entry key="html" value="1815" />
           <entry key="ts" value="3058" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="EJS" value="309" />
-          <entry key="HTML" value="538" />
+          <entry key="HTML" value="1815" />
           <entry key="TypeScript" value="3058" />
         </counts>
       </usages-collector>
@@ -70,7 +71,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/02-servidor-web-nodejs/api-web/src/tragos/tragos.module.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
+            <state relative-caret-position="153">
               <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
@@ -82,7 +83,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/02-servidor-web-nodejs/api-web/src/tragos/fiesta/fiesta.module.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="272">
               <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
@@ -103,10 +104,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/02-servidor-web-nodejs/api-web/src/chat/chat.gateway.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+            <state relative-caret-position="306">
+              <caret line="21" column="49" lean-forward="true" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
               <folding>
-                <element signature="e#0#87#0" expanded="true" />
+                <element signature="e#0#95#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -115,8 +116,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/02-servidor-web-nodejs/api-web/publico/websockets/socket.io.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89148">
-              <caret line="5244" lean-forward="true" selection-start-line="5244" selection-end-line="5244" />
+            <state relative-caret-position="2300">
+              <caret line="5244" selection-start-line="5244" selection-end-line="5244" />
             </state>
           </provider>
         </entry>
@@ -124,8 +125,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/02-servidor-web-nodejs/api-web/publico/websockets/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+            <state relative-caret-position="187">
+              <caret line="56" column="26" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -133,7 +134,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/02-servidor-web-nodejs/api-web/src/main.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-214">
+            <state relative-caret-position="204">
               <caret line="12" selection-start-line="12" selection-end-line="12" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
@@ -157,11 +158,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/02-servidor-web-nodejs/api-web/src/app.module.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
+            <state relative-caret-position="476">
               <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="17" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
-                <element signature="e#656#1096#0" />
               </folding>
             </state>
           </provider>
@@ -170,7 +170,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/02-servidor-web-nodejs/api-web/src/tragos/distribuidor/distribuidor.module.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
+            <state relative-caret-position="136">
               <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
@@ -185,6 +185,9 @@
     <findStrings>
       <find>./distribuidor</find>
       <find>distri</find>
+      <find>peti</find>
+      <find>inner</find>
+      <find>sock</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -236,10 +239,10 @@
       <path value="$PROJECT_DIR$/02-servidor-web-nodejs/api-web/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="width" value="978" />
-    <option name="height" value="1039" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="width" value="977" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -342,11 +345,13 @@
       <workItem from="1561572972623" duration="1134000" />
       <workItem from="1561577118882" duration="1970000" />
       <workItem from="1562084113643" duration="8940000" />
+      <workItem from="1562101247233" duration="230000" />
+      <workItem from="1562700109356" duration="6140000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29192000" />
+    <option name="totallyTimeSpent" value="35562000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -360,7 +365,7 @@
   <component name="ToolWindowManager">
     <frame x="-6" y="0" width="781" height="830" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3293011" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2889785" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -373,7 +378,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="9" weight="0.3299566" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.48901904" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.24304539" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -401,40 +406,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/02-servidor-web-nodejs/api-web/src/distribuidor/distribuidor.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02-servidor-web-nodejs/api-web/src/distribuidor/distribuidor.entity.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="68" selection-start-column="68" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02-servidor-web-nodejs/api-web/src/fiesta/fiesta.entity.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="65" selection-start-column="65" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02-servidor-web-nodejs/api-web/src/fiesta/fiesta.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/02-servidor-web-nodejs/api-web/src/distribuidor/distribuidor.module.ts" />
+    <entry file="file://$PROJECT_DIR$/02-servidor-web-nodejs/api-web/src/distribuidor/distribuidor.entity.ts" />
+    <entry file="file://$PROJECT_DIR$/02-servidor-web-nodejs/api-web/src/fiesta/fiesta.entity.ts" />
+    <entry file="file://$PROJECT_DIR$/02-servidor-web-nodejs/api-web/src/fiesta/fiesta.module.ts" />
     <entry file="file://$PROJECT_DIR$/02-servidor-web-nodejs/api-web/tslint.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -446,9 +421,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="62" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
-          <folding>
-            <element signature="e#0#85#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -476,9 +448,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#74#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -486,9 +455,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
           <caret line="34" column="32" lean-forward="true" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#78#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -496,9 +462,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="46" selection-start-line="2" selection-start-column="46" selection-end-line="2" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#66#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -537,15 +500,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/02-servidor-web-nodejs/api-web/src/tragos/tragos.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
+        <state relative-caret-position="153">
           <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
@@ -553,19 +513,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/02-servidor-web-nodejs/api-web/src/tragos/distribuidor/distribuidor.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/02-servidor-web-nodejs/api-web/src/tragos/fiesta/fiesta.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
+        <state relative-caret-position="272">
           <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
@@ -580,30 +530,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/02-servidor-web-nodejs/api-web/src/app.module.ts">
+    <entry file="file://$PROJECT_DIR$/02-servidor-web-nodejs/api-web/src/chat/chat.gateway.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="17" />
+        <state relative-caret-position="306">
+          <caret line="21" column="49" lean-forward="true" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
           <folding>
-            <element signature="e#0#40#0" expanded="true" />
-            <element signature="e#656#1096#0" />
+            <element signature="e#0#95#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/02-servidor-web-nodejs/api-web/publico/websockets/socket.io.js">
+    <entry file="file://$PROJECT_DIR$/02-servidor-web-nodejs/api-web/src/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89148">
-          <caret line="5244" lean-forward="true" selection-start-line="5244" selection-end-line="5244" />
+        <state relative-caret-position="476">
+          <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/02-servidor-web-nodejs/api-web/src/main.ts">
+    <entry file="file://$PROJECT_DIR$/02-servidor-web-nodejs/api-web/src/tragos/distribuidor/distribuidor.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-214">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="136">
+          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
           <folding>
-            <element signature="e#0#43#0" expanded="true" />
+            <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -618,20 +570,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/02-servidor-web-nodejs/api-web/src/chat/chat.gateway.ts">
+    <entry file="file://$PROJECT_DIR$/02-servidor-web-nodejs/api-web/src/main.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
           <folding>
-            <element signature="e#0#87#0" expanded="true" />
+            <element signature="e#0#43#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/02-servidor-web-nodejs/api-web/publico/websockets/socket.io.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2300">
+          <caret line="5244" selection-start-line="5244" selection-end-line="5244" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/02-servidor-web-nodejs/api-web/publico/websockets/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+        <state relative-caret-position="187">
+          <caret line="56" column="26" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
         </state>
       </provider>
     </entry>
